@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body, h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2, h3, .link {
+  font-family: 'Poppins', sans-serif;
+}
+
+  p, h4, h5 {
+    font-family: Arial, sans-serif;
+  }
