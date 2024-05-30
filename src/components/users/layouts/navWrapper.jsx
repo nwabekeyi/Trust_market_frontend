@@ -7,8 +7,7 @@ import { useState } from 'react';
 import Dropdown from '../../Dropdown';
 import { Navigate } from 'react-router-dom';
 import { MdOutlineShoppingBag } from "react-icons/md";
-
-
+import MobileNavbar from "../../mobileNav";
 
 // Define the higher-order component
 const NavWrapper = (WrappedComponent) => {
@@ -40,9 +39,11 @@ const NavWrapper = (WrappedComponent) => {
 
     return (
       <div>
-        {/* Navbar for homepage */}
+
         { location === "/"  ?
-        <header className="hidden md:block">
+        <div>
+        {/* <MobileNav /> */}
+        <header className="hidden lg:block">
         <nav className=" flex justify-between mx-20  items-center bg-white py-4 h-[80px] my-0 ">
           <div className="flex items-center">
         <NavLink to="/" className="text-3xl text-red cursor">Trust <span className="text-yellow">Market</span></NavLink>
@@ -84,6 +85,11 @@ const NavWrapper = (WrappedComponent) => {
           </div>
       </nav>
       </header>
+      {/* mobile nav */}
+      <MobileNavbar />
+      </div>
+
+
       // navbar for authpages
       :
        <div>
