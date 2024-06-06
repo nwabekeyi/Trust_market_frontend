@@ -9,13 +9,14 @@ const MobileNavbar = () => {
     setIsVisible(!isVisible);
   };
 
+
   return (
-    <div className="relative justify-center lg:hidden py-5 px-3">
-      <nav className="bg-white h-[30px] flex items-center justify-between px-4">
-      <NavLink to="/" className="text-3xl text-red cursor">Trust <span className="text-yellow">Market</span></NavLink>
-        <div onClick={toggleMobilenav} className="cursor-pointer space-y-2 z-20 relative">
+    <div className="relative justify-center lg:hidden px-5 pt-5 absolute text-white fixed top-0 left-0 z-10">
+      <nav className="bg-white h-5 flex items-center justify-between ">
+      <NavLink to="/" className="text-xl text-red cursor">Trust <span className="text-yellow">Market</span></NavLink>
+        <div onClick={toggleMobilenav} className="cursor-pointer space-y-1 z-20 relative">
           <motion.div
-            className="h-1 w-8 bg-red"
+            className={`h-1 w-6 ${isVisible? "bg-white" : 'bg-red'}`}
             initial={{ rotate: 0, y: 0 }}
             animate={{
               rotate: isVisible ? 45 : 0,
@@ -24,17 +25,17 @@ const MobileNavbar = () => {
             transition={{ duration: 0.3 }}
           />
           <motion.div
-            className="h-1 w-8 bg-red"
+            className="h-1 w-6 bg-red"
             initial={{ opacity: 1 }}
             animate={{ opacity: isVisible ? 0 : 1 }}
             transition={{ duration: 0.3 }}
           />
           <motion.div
-            className="h-1 w-8 bg-red"
+            className={`h-1 w-6 ${isVisible? "bg-white" : 'bg-red'}`}
             initial={{ rotate: 0, y: 0 }}
             animate={{
               rotate: isVisible ? -45 : 0,
-              y: isVisible ? -17 : 0,
+              y: isVisible ? -11 : 0,
             }}
             transition={{ duration: 0.3 }}
           />
@@ -43,7 +44,7 @@ const MobileNavbar = () => {
 
       {isVisible && (
         <motion.ul
-          className="bg-black text-white fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center space-y-4"
+          className="bg-black text-white fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center space-y-4  z-10"
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
           exit={{ x: "-100%" }}
